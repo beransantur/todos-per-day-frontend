@@ -1,18 +1,25 @@
+import * as Icon from "react-bootstrap-icons";
+
 const TodoApp = () => {
   return (
     <div className="todo-app-container">
       <div className="todo-app">
         <div className="header">
           <h1>Todos per day</h1>
+          {/* ADD-TASK-BTN */}
           <button
-            type="button"
-            class="btn btn-primary"
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"
+            className="add-task-button"
           >
-            Launch demo modal
+            <Icon.PlusSquareFill
+              size={45}
+              color={"grey"}
+              style={{ cursor: "pointer" }}
+            />{" "}
           </button>
 
+          {/* MODAL */}
           <div
             className="modal fade add-todo"
             id="exampleModal"
@@ -64,19 +71,19 @@ const TodoApp = () => {
                           aria-labelledby="dropdownMenuButton1"
                         >
                           <li>
-                            <a class="dropdown-item" href="#">
+                            <span class="dropdown-item" href="#">
                               Action
-                            </a>
+                            </span>
                           </li>
                           <li>
-                            <a class="dropdown-item" href="#">
+                            <span class="dropdown-item" href="#">
                               Another action
-                            </a>
+                            </span>
                           </li>
                           <li>
-                            <a class="dropdown-item" href="#">
+                            <span class="dropdown-item" href="#">
                               Something else here
-                            </a>
+                            </span>
                           </li>
                         </ul>
                       </div>
@@ -133,7 +140,13 @@ const TodoApp = () => {
               dolorem?
             </div>
             <div className="todo-day">Wednesday</div>
-            <div className="todo-done">Not done</div>
+            <div className="todo-done">
+              <Icon.Check2Square
+                size={40}
+                color={"green"}
+                style={{ cursor: "pointer" }}
+              />
+            </div>
           </div>{" "}
           <div className="todo">
             <div className="todo-number">1</div>

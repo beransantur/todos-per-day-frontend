@@ -114,6 +114,11 @@ label {
   color: white;
 }
 
+.add-task-button {
+  border: 0;
+  padding: 0;
+}
+
 .todos-header .todo-day {
   border-right: 0.5px solid white;
   border-left: 0.5px solid white;
@@ -136,5 +141,10 @@ label {
 @media (max-width: 768px) {
   .todo-app {
     width: 100%;
+    font-size: 14px;
+    line-height: normal;
+  }
+
+  .todo-content {
   }
 }
