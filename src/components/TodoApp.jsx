@@ -13,7 +13,9 @@ const TodoApp = () => {
 
   const [todos, setTodos] = useState([]);
   const getTodos = async () => {
-    const res = await axios.get("http://localhost:5000/todos");
+    const res = await axios.get(
+      "https://todos-per-day-backend.herokuapp.com/todos"
+    );
     const data = await res.data;
 
     const newTodos = data.filter((todo) => todo.status !== "completed");
@@ -23,7 +25,7 @@ const TodoApp = () => {
 
   const saveTodo = async (values) => {
     const savedTodo = await axios.post(
-      "http://localhost:5000/todos/createTodo",
+      "https://todos-per-day-backend.herokuapp.com/todos/createTodo",
       values
     );
     const data = await savedTodo.data;
@@ -35,7 +37,7 @@ const TodoApp = () => {
   const updateTodo = async (todo) => {
     const newTodo = { ...todo, status: "completed" };
     const updatedTodo = await axios.patch(
-      "http://localhost:5000/todos/updateTodo",
+      "https://todos-per-day-backend.herokuapp.com/todos/updateTodo",
       newTodo
     );
     const data = await updatedTodo.data;
