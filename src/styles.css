@@ -137,8 +137,13 @@ label {
     width: 100%;
     font-size: 14px;
     line-height: normal;
+    margin: 0 5px;
   }
   select {
     max-width: 100% !important;
+  }
+
+  .todo-done {
+    margin-right: 15px;
   }
 }

@@ -129,7 +129,13 @@ const TodoApp = () => {
               dolorem?
             </div>
             <div className="todo-day">Wednesday</div>
-            <div className="todo-done">Not done</div>
+            <div className="todo-done">
+              <Icon.Check2Square
+                size={40}
+                color={"green"}
+                style={{ cursor: "pointer" }}
+              />
+            </div>{" "}
           </div>{" "}
           <div className="todo striped">
             <div className="todo-number">1</div>
