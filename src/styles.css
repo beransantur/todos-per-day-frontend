@@ -56,6 +56,12 @@ body {
   gap: 25px;
   margin: 10px 0;
 }
+.no-todo {
+  flex: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .todo {
   text-align: center;
