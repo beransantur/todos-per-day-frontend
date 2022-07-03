@@ -57,6 +57,7 @@ body {
   margin: 10px 0;
 }
 .no-todo {
+  margin: 10px 0;
   flex: 5;
   display: flex;
   justify-content: center;
