@@ -60,7 +60,12 @@ const TodoApp = () => {
           {todos.length > 0 ? (
             <Todos todos={todos} updateTodo={updateTodo} />
           ) : (
-            <div className="no-todo">There is no task</div>
+            <div className="no-todo">
+              <p className="lead">
+                <Icon.XOctagonFill size={30} style={{ marginRight: "5px" }} />
+                There is no task
+              </p>
+            </div>
           )}
         </>
       </div>

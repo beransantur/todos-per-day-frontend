@@ -16,6 +16,7 @@ const Todo = ({ todo, index, updateTodo }) => {
           <div className="todo-done">
             <Icon.Check2Square
               size={40}
+              className="done-icon"
               color={"green"}
               style={{ cursor: "pointer" }}
               onClick={() => {

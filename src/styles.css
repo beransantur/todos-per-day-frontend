@@ -146,11 +146,15 @@ label {
     line-height: normal;
     margin: 0 5px;
   }
+  .done-icon {
+    height: 25px;
+    width: 30px;
+  }
   select {
     max-width: 100% !important;
   }
 
   .todo-done {
-    margin-right: 15px;
+    margin-right: 5px;
   }
 }

@@ -6,7 +6,7 @@ const TodosHeader = () => {
       <div className="todo-number">#</div>
       <div className="todo-content">Task</div>
       <div className="todo-day">Day</div>
-      <div className="todo-done">Not done</div>
+      <div className="todo-done">Completed</div>
     </div>
   );
 };
