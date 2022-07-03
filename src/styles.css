@@ -4,6 +4,11 @@
 
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("/src/images/bg-image.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .todo-app-container {
@@ -15,7 +20,9 @@ body {
 }
 
 .todo-app {
-  border: black solid 10px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
   height: 70%;
   width: 60%;
   display: flex;
@@ -30,6 +37,7 @@ body {
 }
 .header h1 {
   margin-left: auto;
+  color: red;
 }
 
 .header button {
@@ -45,28 +53,48 @@ body {
 .todos {
   overflow: auto;
   flex: 5;
-  border: yellow solid 10px;
+  gap: 25px;
+  margin: 10px 0;
 }
 
 .todo {
+  text-align: center;
+  padding: 20px 10px;
   display: flex;
   min-height: 15%;
-  border: saddlebrown solid 10px;
   flex-wrap: nowrap;
   gap: 20px;
 }
+
+label {
+  font-size: 18px;
+  width: 100%;
+}
+.day-selector {
+  width: 72%;
+}
+
+.add-todo {
+  height: 50%;
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.striped {
+  background-color: #d3d3d3;
+}
 .todo-number {
-  border: 2px solid black;
   flex: 0.5;
 }
 
 .todo-content {
-  border: 2px solid black;
   flex: 3;
 }
 
 .todo-day {
-  border: 2px solid black;
   flex: 1;
 }
 
@@ -75,12 +103,34 @@ body {
 }
 
 .todos-header {
-  border: 10px solid black;
   font-weight: 700;
   text-align: center;
   display: flex;
   gap: 20px;
   flex: 0.5;
+  background-color: #37304a;
+  justify-content: space-evenly;
+  align-items: center;
+  color: white;
+}
+
+.todos-header .todo-day {
+  border-right: 0.5px solid white;
+  border-left: 0.5px solid white;
+}
+
+.todos-header .todo-number {
+  border-right: 0.5px solid white;
+}
+
+.todos-header .todo-done {
+  margin-right: 20px;
+}
+
+.dropdown-modal {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 @media (max-width: 768px) {
