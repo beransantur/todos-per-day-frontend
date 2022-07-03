@@ -132,22 +132,13 @@ label {
   margin-right: 20px;
 }
 
-.dropdown-modal {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-.dropdown-modal select {
-  width: 100%;
-}
-
 @media (max-width: 768px) {
   .todo-app {
     width: 100%;
     font-size: 14px;
     line-height: normal;
   }
-
-  .todo-content {
+  select {
+    max-width: 100% !important;
   }
 }

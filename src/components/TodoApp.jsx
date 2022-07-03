@@ -1,7 +1,13 @@
+import { Formik, Form, Field } from "formik";
 import { useState } from "react";
 import * as Icon from "react-bootstrap-icons";
 
 const TodoApp = () => {
+  const handleSubmit = (values, formikProps) => {
+    formikProps.resetForm();
+    formikProps.setFieldValue("task", "");
+  };
+
   return (
     <div className="todo-app-container">
       <div className="todo-app">
@@ -42,40 +48,62 @@ const TodoApp = () => {
                   ></button>
                 </div>
                 <div class="modal-body">
-                  <div class="input-group mb-3">
-                    <label htmlFor="">Task</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Recipient's username"
-                      aria-label="Recipient's username"
-                      aria-describedby="button-addon2"
-                    />
-                  </div>
-                  <div className="dropdown-modal">
-                    <label className="day-selector">Day:</label>
-                    <select
-                      class="form-select"
-                      aria-label="Default select example"
-                    >
-                      <option selected>Open this select menu</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="modal-footer d-flex w-100 justify-content-between">
-                  <button
-                    type="button"
-                    class="btn btn-secondary m-0"
-                    data-bs-dismiss="modal"
+                  <Formik
+                    initialValues={{ selectedDay: "", task: "" }}
+                    onSubmit={handleSubmit}
                   >
-                    Close
-                  </button>
-                  <button type="button" class="btn btn-primary">
-                    Save changes
-                  </button>
+                    {(formik) => {
+                      console.log(formik.values);
+                      return (
+                        <div>
+                          <Form>
+                            <div class="input-group mb-3">
+                              <label htmlFor="">Task</label>
+                              <Field name="task" class="form-control" />
+                            </div>
+                            <div>
+                              <label className="day-selector">Day:</label>
+                              <Field
+                                as="select"
+                                class="form-select input-sm"
+                                name="selectedDay"
+                              >
+                                <option value="" selected={true}>
+                                  Select a day
+                                </option>
+                                <option value="Monday">Monday</option>
+                                <option value="Tuesday">Tuesday</option>
+                                <option value="Wednesday">Wednesday</option>
+                                <option value="Thursday">Thursday</option>
+                                <option value="Friday">Friday</option>
+                                <option value="Saturday">Saturday</option>
+                                <option value="Sunday">Sunday</option>
+                              </Field>
+                            </div>
+                            <div class="modal-footer d-flex w-100 justify-content-between p-0 pt-2 pb-2 m-0">
+                              <button
+                                type="button"
+                                class="btn btn-secondary m-0"
+                                data-bs-dismiss="modal"
+                              >
+                                Close
+                              </button>
+                              <button
+                                type="submit"
+                                class="btn btn-primary"
+                                disabled={
+                                  formik.values.selectedDay === "" ||
+                                  formik.values.task === ""
+                                }
+                              >
+                                Save changes
+                              </button>
+                            </div>
+                          </Form>
+                        </div>
+                      );
+                    }}
+                  </Formik>
                 </div>
               </div>
             </div>
