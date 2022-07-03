@@ -1,3 +1,4 @@
+import { useState } from "react";
 import * as Icon from "react-bootstrap-icons";
 
 const TodoApp = () => {
@@ -51,43 +52,17 @@ const TodoApp = () => {
                       aria-describedby="button-addon2"
                     />
                   </div>
-                  <div class="input-group mb-3">
-                    <div className="dropdown-modal">
-                      <label htmlFor="" className="day-selector">
-                        Day:
-                      </label>
-                      <div class="dropdown">
-                        <button
-                          class="btn btn-secondary dropdown-toggle"
-                          type="button"
-                          id="dropdownMenuButton1"
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                        >
-                          Dropdown button
-                        </button>
-                        <ul
-                          class="dropdown-menu"
-                          aria-labelledby="dropdownMenuButton1"
-                        >
-                          <li>
-                            <span class="dropdown-item" href="#">
-                              Action
-                            </span>
-                          </li>
-                          <li>
-                            <span class="dropdown-item" href="#">
-                              Another action
-                            </span>
-                          </li>
-                          <li>
-                            <span class="dropdown-item" href="#">
-                              Something else here
-                            </span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
+                  <div className="dropdown-modal">
+                    <label className="day-selector">Day:</label>
+                    <select
+                      class="form-select"
+                      aria-label="Default select example"
+                    >
+                      <option selected>Open this select menu</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
                   </div>
                 </div>
                 <div class="modal-footer d-flex w-100 justify-content-between">

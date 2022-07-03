@@ -71,7 +71,7 @@ label {
   width: 100%;
 }
 .day-selector {
-  width: 72%;
+  width: 50%;
 }
 
 .add-todo {
@@ -136,6 +136,9 @@ label {
   width: 100%;
   display: flex;
   justify-content: space-between;
+}
+.dropdown-modal select {
+  width: 100%;
 }
 
 @media (max-width: 768px) {
