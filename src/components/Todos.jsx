@@ -4,7 +4,9 @@ const Todos = ({ todos, updateTodo }) => {
   return (
     <div className="todos">
       {todos.map((todo, index) => {
-        return <Todo todo={todo} index={index} updateTodo={updateTodo} />;
+        return (
+          <Todo key={index} todo={todo} index={index} updateTodo={updateTodo} />
+        );
       })}
     </div>
   );

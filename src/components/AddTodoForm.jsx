@@ -12,18 +12,18 @@ const AddTodoForm = ({ handleSubmit }) => {
           return (
             <div>
               <Form>
-                <div class="input-group mb-3">
+                <div className="input-group mb-3">
                   <label htmlFor="">Task</label>
-                  <Field name="task" class="form-control" />
+                  <Field name="task" className="form-control" />
                 </div>
                 <div>
                   <label className="day-selector">Day:</label>
                   <Field
                     as="select"
-                    class="form-select input-sm"
+                    className="form-select input-sm"
                     name="selectedDay"
                   >
-                    <option value="" selected={true}>
+                    <option value="" defaultValue={true}>
                       Select a day
                     </option>
                     <option value="Monday">Monday</option>
@@ -35,17 +35,17 @@ const AddTodoForm = ({ handleSubmit }) => {
                     <option value="Sunday">Sunday</option>
                   </Field>
                 </div>
-                <div class="modal-footer d-flex w-100 justify-content-between p-0 pt-2 pb-2 m-0">
+                <div className="modal-footer d-flex w-100 justify-content-between p-0 pt-2 pb-2 m-0">
                   <button
                     type="button"
-                    class="btn btn-secondary m-0"
+                    className="btn btn-secondary m-0"
                     data-bs-dismiss="modal"
                   >
                     Close
                   </button>
                   <button
                     type="submit"
-                    class="btn btn-primary"
+                    className="btn btn-primary"
                     data-bs-dismiss="modal"
                     disabled={
                       formik.values.selectedDay === "" ||
