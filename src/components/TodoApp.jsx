@@ -12,6 +12,8 @@ const TodoApp = () => {
   };
 
   const [todos, setTodos] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   const getTodos = async () => {
     const res = await axios.get(
       "https://todos-per-day-backend.herokuapp.com/todos"
@@ -21,6 +23,7 @@ const TodoApp = () => {
     const newTodos = data.filter((todo) => todo.status !== "completed");
 
     setTodos(newTodos);
+    setLoading(false);
   };
 
   const saveTodo = async (values) => {
@@ -57,7 +60,16 @@ const TodoApp = () => {
         <>
           <Header handleSubmit={handleSubmit} />
           <TodosHeader />
-          {todos.length > 0 ? (
+          {loading === true ? (
+            <div className="loading">
+              <span style={{ marginRight: "5px" }}>Loading...</span>
+              <div class="d-flex justify-content-center loading-spinner">
+                <div class="spinner-border" role="status">
+                  <span class="sr-only"></span>
+                </div>
+              </div>
+            </div>
+          ) : todos.length > 0 ? (
             <Todos todos={todos} updateTodo={updateTodo} />
           ) : (
             <div className="no-todo">
