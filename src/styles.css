@@ -170,7 +170,4 @@ label {
   .todo-done {
     margin-right: 5px;
   }
-  .todo-content {
-    word-break: break-all;
-  }
 }
