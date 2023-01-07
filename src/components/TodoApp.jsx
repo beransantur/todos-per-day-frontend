@@ -16,7 +16,7 @@ const TodoApp = () => {
 
   const getTodos = async () => {
     const res = await axios.get(
-      "https://todos-per-day-backend.herokuapp.com/todos"
+        process.env.REACT_APP_BACKEND_REQUEST_URL + "/todos"
     );
     const data = await res.data;
 
@@ -28,7 +28,7 @@ const TodoApp = () => {
 
   const saveTodo = async (values) => {
     const savedTodo = await axios.post(
-      "https://todos-per-day-backend.herokuapp.com/todos/createTodo",
+        process.env.REACT_APP_BACKEND_REQUEST_URL + "/todos/createTodo",
       values
     );
     const data = await savedTodo.data;
@@ -40,7 +40,7 @@ const TodoApp = () => {
   const updateTodo = async (todo) => {
     const newTodo = { ...todo, status: "completed" };
     const updatedTodo = await axios.patch(
-      "https://todos-per-day-backend.herokuapp.com/todos/updateTodo",
+        process.env.REACT_APP_BACKEND_REQUEST_URL + "/todos/updateTodo",
       newTodo
     );
     const data = await updatedTodo.data;
